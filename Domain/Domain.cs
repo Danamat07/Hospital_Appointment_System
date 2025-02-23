@@ -26,16 +26,15 @@ namespace Hospital_Appointment_System.Domain
 
     public enum Specialisation
     {
-        General_Practitioner,
         Cardiologist,
+        Dentist,
         Dermatologist,
         Neurologist,
+        Orthopedist,
         Pediatrician,
-        Orthopedic,
         Psychiatrist,
         Radiologist,
-        Surgeon,
-        Dentist
+        General_Practitioner
     }
 
     public class Doctor
@@ -43,16 +42,12 @@ namespace Hospital_Appointment_System.Domain
         public int Id { get; set; }
         public string Name { get; set; }
         public Specialisation Specialization { get; set; }
-        public string Phone { get; set; }
-        public string Email { get; set; }
 
-        public Doctor(int id, string name, Specialisation specialization, string phone, string email)
+        public Doctor(int id, string name, Specialisation specialization)
         {
             Id = id;
             Name = name;
             Specialization = specialization;
-            Phone = phone;
-            Email = email;
         }
     }
 
