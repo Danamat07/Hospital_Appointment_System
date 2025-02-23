@@ -56,8 +56,31 @@ namespace Hospital_Appointment_System.Domain
         }
     }
 
+    public enum AppointmentStatus
+    {
+        Scheduled,
+        Completed,
+        Cancelled,
+        Missed
+    }
+
     internal class Appointment
     {
-        
+        public int Id { get; set; }
+        public int PatientID { get; set; }
+        public int DoctorID { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
+        public AppointmentStatus Status { get; set; }
+
+        public Appointment(int id, int patientID, int doctorID, DateTime startTime, DateTime endTime, AppointmentStatus status)
+        {
+            Id = id;
+            PatientID = patientID;
+            DoctorID = doctorID;
+            StartTime = startTime;
+            EndTime = endTime;
+            Status = status;
+        }
     }
 }
