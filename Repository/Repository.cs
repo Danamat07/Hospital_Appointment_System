@@ -54,7 +54,6 @@ namespace Hospital_Appointment_System.Repository
         {
             Patient patient = null;
             string query = "SELECT * FROM Patient WHERE ID @Id";
-
             using (var connection = DatabaseHelper.GetConnection())
             {
                 connection.Open();
@@ -118,6 +117,193 @@ namespace Hospital_Appointment_System.Repository
                 cmd.ExecuteNonQuery();
             }
         }
+    }
+
+    public class DoctorRepository
+    {
+        public List<Doctor> GetAllDoctors()
+        {
+            var doctors = new List<Doctor>();
+            string query = "SELECT * FROM Doctor";
+            using (var connection = DatabaseHelper.GetConnection())
+            {
+                connection.Open();
+                MySqlCommand cmd = DatabaseHelper.CreateCommand(query, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    doctors.Add(new Doctor(
+                        reader.GetInt32("ID"),
+                        reader.GetString("Name"),
+                        (Specialisation)Enum.Parse(typeof(Specialisation), reader.GetString("Specialization"))
+                    ));
+                }
+            }
+            return doctors;
+        }
+
+        public Doctor GetDoctorById(int id)
+        {
+            Doctor doctor = null;
+            string query = "SELECT * FROM Doctor WHERE ID = @Id";
+            using (var connection = DatabaseHelper.GetConnection())
+            {
+                connection.Open();
+                MySqlCommand cmd = DatabaseHelper.CreateCommand(query, connection);
+                cmd.Parameters.AddWithValue("@Id", id);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    doctor = new Doctor(
+                        reader.GetInt32("ID"),
+                        reader.GetString("Name"),
+                        (Specialisation)Enum.Parse(typeof(Specialisation), reader.GetString("Specialization"))
+                    );
+                }
+            }
+            return doctor;
+        }
+
+        public void AddDoctor(Doctor doctor)
+        {
+            string query = "INSERT INTO Doctor (Name, Specialization) VALUES (@Name, @Specialization)";
+            using (var connection = DatabaseHelper.GetConnection())
+            {
+                connection.Open();
+                MySqlCommand cmd = DatabaseHelper.CreateCommand(query, connection);
+                cmd.Parameters.AddWithValue("@Name", doctor.Name);
+                cmd.Parameters.AddWithValue("@Specialization", doctor.Specialization.ToString());
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void UpdateDoctor(Doctor doctor)
+        {
+            string query = "UPDATE Doctor SET Name = @Name, Specialization = @Specialization WHERE ID = @Id";
+            using (var connection = DatabaseHelper.GetConnection())
+            {
+                connection.Open();
+                MySqlCommand cmd = DatabaseHelper.CreateCommand(query, connection);
+                cmd.Parameters.AddWithValue("@Id", doctor.Id);
+                cmd.Parameters.AddWithValue("@Name", doctor.Name);
+                cmd.Parameters.AddWithValue("@Specialization", doctor.Specialization.ToString());
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void DeleteDoctor(int id)
+        {
+            string query = "DELETE FROM Doctor WHERE ID = @Id";
+            using (var connection = DatabaseHelper.GetConnection())
+            {
+                connection.Open();
+                MySqlCommand cmd = DatabaseHelper.CreateCommand(query, connection);
+                cmd.Parameters.AddWithValue("@Id", id);
+                cmd.ExecuteNonQuery();
+            }
+        }
+    }
+
+    public class AppointmentRepository
+    {
+        public List<Appointment> GetAllAppointments()
+        {
+            var appointments = new List<Appointment>();
+            string query = "SELECT * FROM Appointment";
+            using (var connection = DatabaseHelper.GetConnection())
+            {
+                connection.Open();
+                MySqlCommand cmd = DatabaseHelper.CreateCommand(query, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    appointments.Add(new Appointment(
+                        reader.GetInt32("ID"),
+                        reader.GetInt32("PatientID"),
+                        reader.GetInt32("DoctorID"),
+                        reader.GetDateTime("StartTime"),
+                        reader.GetDateTime("EndTime"),
+                        (AppointmentStatus)Enum.Parse(typeof(AppointmentStatus), reader.GetString("Status"))
+                    ));
+                }
+            }
+            return appointments;
+        }
+
+        public Appointment GetAppointmentById(int id)
+        {
+            Appointment appointment = null;
+            string query = "SELECT * FROM Appointment WHERE ID = @Id";
+            using (var connection = DatabaseHelper.GetConnection())
+            {
+                connection.Open();
+                MySqlCommand cmd = DatabaseHelper.CreateCommand(query, connection);
+                cmd.Parameters.AddWithValue("@Id", id);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    appointment = new Appointment(
+                        reader.GetInt32("ID"),
+                        reader.GetInt32("PatientID"),
+                        reader.GetInt32("DoctorID"),
+                        reader.GetDateTime("StartTime"),
+                        reader.GetDateTime("EndTime"),
+                        (AppointmentStatus)Enum.Parse(typeof(AppointmentStatus), reader.GetString("Status"))
+                    );
+                }
+            }
+            return appointment;
+        }
+
+        public void AddAppointment(Appointment appointment)
+        {
+            string query = "INSERT INTO Appointment (PatientID, DoctorID, StartTime, EndTime, Status) VALUES (@PatientID, @DoctorID, @StartTime, @EndTime, @Status)";
+            using (var connection = DatabaseHelper.GetConnection())
+            {
+                connection.Open();
+                MySqlCommand cmd = DatabaseHelper.CreateCommand(query, connection);
+                cmd.Parameters.AddWithValue("@PatientID", appointment.PatientID);
+                cmd.Parameters.AddWithValue("@DoctorID", appointment.DoctorID);
+                cmd.Parameters.AddWithValue("@StartTime", appointment.StartTime);
+                cmd.Parameters.AddWithValue("@EndTime", appointment.EndTime);
+                cmd.Parameters.AddWithValue("@Status", appointment.Status.ToString());
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void UpdateAppointment(Appointment appointment)
+        {
+            string query = "UPDATE Appointment SET PatientID = @PatientID, DoctorID = @DoctorID, StartTime = @StartTime, EndTime = @EndTime, Status = @Status WHERE ID = @Id";
+            using (var connection = DatabaseHelper.GetConnection())
+            {
+                connection.Open();
+                MySqlCommand cmd = DatabaseHelper.CreateCommand(query, connection);
+                cmd.Parameters.AddWithValue("@Id", appointment.Id);
+                cmd.Parameters.AddWithValue("@PatientID", appointment.PatientID);
+                cmd.Parameters.AddWithValue("@DoctorID", appointment.DoctorID);
+                cmd.Parameters.AddWithValue("@StartTime", appointment.StartTime);
+                cmd.Parameters.AddWithValue("@EndTime", appointment.EndTime);
+                cmd.Parameters.AddWithValue("@Status", appointment.Status.ToString());
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void DeleteAppointment(int id)
+        {
+            string query = "DELETE FROM Appointments WHERE ID = @Id";
+            using (var connection = DatabaseHelper.GetConnection())
+            {
+                connection.Open();
+                MySqlCommand cmd = DatabaseHelper.CreateCommand(query, connection);
+                cmd.Parameters.AddWithValue("@Id", id);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
     }
 
 }
