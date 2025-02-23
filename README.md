@@ -1,2 +1,2 @@
 # UML Schema
-![HospUML drawio](https://github.com/user-attachments/assets/7bc2cf66-7330-4830-980f-412df130e520)
+![HospUML drawio](https://github.com/user-attachments/assets/4dc71368-2eea-442d-b4b1-99ff9904f2fe)
