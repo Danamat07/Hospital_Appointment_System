@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hospital_Appointment_System.Domain
 {
-    internal class Patient
+    public class Patient
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -38,7 +38,7 @@ namespace Hospital_Appointment_System.Domain
         Dentist
     }
 
-    internal class Doctor
+    public class Doctor
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -64,7 +64,7 @@ namespace Hospital_Appointment_System.Domain
         Missed
     }
 
-    internal class Appointment
+    public class Appointment
     {
         public int Id { get; set; }
         public int PatientID { get; set; }
