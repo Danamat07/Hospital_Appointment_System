@@ -83,4 +83,5 @@ namespace Hospital_Appointment_System.Domain
             Status = status;
         }
     }
+
 }
