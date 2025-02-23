@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Hospital_Appointment_System.Service;
 using Hospital_Appointment_System.Domain;
+using Hospital_Appointment_System.Repository;
 
 namespace Hospital_Appointment_System.Controller
 {
@@ -70,6 +71,11 @@ namespace Hospital_Appointment_System.Controller
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        public Patient Authenticate(string email, string password)
+        {
+            return patientService.GetAllPatients().FirstOrDefault(p => p.Email == email && p.Password == password);
         }
     }
 }
