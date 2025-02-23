@@ -40,6 +40,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnAdminLogin = new System.Windows.Forms.Button();
+            this.btnCreateAccount = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -47,6 +49,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.btnCreateAccount);
             this.panel1.Controls.Add(this.btnPatientLogin);
             this.panel1.Controls.Add(this.txtPassword);
             this.panel1.Controls.Add(this.txtEmail);
@@ -62,7 +66,7 @@
             // 
             this.btnPatientLogin.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnPatientLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPatientLogin.Location = new System.Drawing.Point(196, 248);
+            this.btnPatientLogin.Location = new System.Drawing.Point(119, 244);
             this.btnPatientLogin.Name = "btnPatientLogin";
             this.btnPatientLogin.Size = new System.Drawing.Size(75, 29);
             this.btnPatientLogin.TabIndex = 5;
@@ -168,6 +172,27 @@
             this.btnAdminLogin.Text = "Log In";
             this.btnAdminLogin.UseVisualStyleBackColor = false;
             // 
+            // btnCreateAccount
+            // 
+            this.btnCreateAccount.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCreateAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateAccount.Location = new System.Drawing.Point(246, 244);
+            this.btnCreateAccount.Name = "btnCreateAccount";
+            this.btnCreateAccount.Size = new System.Drawing.Size(126, 29);
+            this.btnCreateAccount.TabIndex = 6;
+            this.btnCreateAccount.Text = "Create Account";
+            this.btnCreateAccount.UseVisualStyleBackColor = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(211, 250);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(19, 16);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "or";
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -202,5 +227,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtAdminPassword;
         private System.Windows.Forms.Button btnAdminLogin;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnCreateAccount;
     }
 }

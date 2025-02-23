@@ -7,19 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Hospital_Appointment_System.Controller;
 
 namespace Hospital_Appointment_System.UI
 {
-    public partial class LoginForm : Form
+    public partial class AdminPanel : Form
     {
-        private PatientController patientController;
-        private const string AdminPassword = "admin123";
-        public LoginForm()
+        public AdminPanel()
         {
             InitializeComponent();
-            patientController = new PatientController();
         }
-
     }
 }
