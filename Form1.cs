@@ -22,7 +22,7 @@ namespace Hospital_Appointment_System
         private void Form1_Load(object sender, EventArgs e)
         {
             // query to fetch data from Test table
-            string query = "SELECT * FROM Test";
+            string query = "SELECT * FROM Patient";
 
             // call DatabaseHelper to execute the query
             DataTable dt = DatabaseHelper.ExecuteQuery(query);
