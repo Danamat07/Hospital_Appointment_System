@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Hospital_Appointment_System.Service;
 using Hospital_Appointment_System.Domain;
 using Hospital_Appointment_System.Repository;
+using System.Windows.Forms;
 
 namespace Hospital_Appointment_System.Controller
 {
@@ -34,16 +35,16 @@ namespace Hospital_Appointment_System.Controller
             }
         }
 
-        public void AddPatient(Patient patient)
+        public bool AddPatient(Patient patient)
         {
             try
             {
-                patientService.AddPatient(patient);
-                Console.WriteLine("Patient added successfully.");
+                return patientService.AddPatient(patient);
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                MessageBox.Show($"Error: {ex.Message}");
+                return false;
             }
         }
 

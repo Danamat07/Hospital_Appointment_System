@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using Hospital_Appointment_System.Domain;
 using System.Runtime.CompilerServices;
+using System.Windows.Forms;
 
 namespace Hospital_Appointment_System.Repository
 {
@@ -75,19 +76,29 @@ namespace Hospital_Appointment_System.Repository
             return patient;
         }
 
-        public void AddPatient(Patient patient)
+        public bool AddPatient(Patient patient)
         {
-            string query = "INSERT INTO Patient (Name, Email, Phone, Password) VALUES (@Name, @Email, @Phone, @Password)";
-            using (var connection = DatabaseHelper.GetConnection())
+            try
             {
-                connection.Open();
-                MySqlCommand cmd = DatabaseHelper.CreateCommand(query, connection);
-                cmd.Parameters.AddWithValue("@Name", patient.Name);
-                cmd.Parameters.AddWithValue("@Email", patient.Email);
-                cmd.Parameters.AddWithValue("@Phone", patient.Phone);
-                cmd.Parameters.AddWithValue("@Password", patient.Password);
-                cmd.ExecuteNonQuery();
+                string query = "INSERT INTO Patient (Name, Email, Phone, Password) VALUES (@Name, @Email, @Phone, @Password)";
+                using (var connection = DatabaseHelper.GetConnection())
+                {
+                    connection.Open();
+                    MySqlCommand cmd = DatabaseHelper.CreateCommand(query, connection);
+                    cmd.Parameters.AddWithValue("@Name", patient.Name);
+                    cmd.Parameters.AddWithValue("@Email", patient.Email);
+                    cmd.Parameters.AddWithValue("@Phone", patient.Phone);
+                    cmd.Parameters.AddWithValue("@Password", patient.Password);
+                    int result = cmd.ExecuteNonQuery();
+                    return result > 0;
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+                return false;
+            }
+
         }
 
         public void UpdatePatient(Patient patient)

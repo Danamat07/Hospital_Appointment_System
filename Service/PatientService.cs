@@ -41,11 +41,11 @@ namespace Hospital_Appointment_System.Service
             }
         }
 
-        public void AddPatient(Patient patient)
+        public bool AddPatient(Patient patient)
         {
             try
             {
-                patientRepository.AddPatient(patient);
+                return patientRepository.AddPatient(patient);
             }
             catch (Exception ex)
             {
