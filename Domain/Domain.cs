@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hospital_Appointment_System.Domain
 {
-    internal class Pacient
+    internal class Patient
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -14,7 +14,7 @@ namespace Hospital_Appointment_System.Domain
         public string Phone { get; set; }
         public string Password { get; set; }
 
-        public Pacient(int id, string name, string email, string phone, string password)
+        public Patient(int id, string name, string email, string phone, string password)
         {
             Id = id;
             Name = name;
@@ -24,13 +24,40 @@ namespace Hospital_Appointment_System.Domain
         }
     }
 
+    public enum Specialisation
+    {
+        General_Practitioner,
+        Cardiologist,
+        Dermatologist,
+        Neurologist,
+        Pediatrician,
+        Orthopedic,
+        Psychiatrist,
+        Radiologist,
+        Surgeon,
+        Dentist
+    }
+
     internal class Doctor
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public Specialisation Specialization { get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
 
+        public Doctor(int id, string name, Specialisation specialization, string phone, string email)
+        {
+            Id = id;
+            Name = name;
+            Specialization = specialization;
+            Phone = phone;
+            Email = email;
+        }
     }
 
     internal class Appointment
     {
-
+        
     }
 }
