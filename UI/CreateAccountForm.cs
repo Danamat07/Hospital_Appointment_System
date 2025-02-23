@@ -16,5 +16,10 @@ namespace Hospital_Appointment_System.UI
         {
             InitializeComponent();
         }
+
+        private void btnCreateNewAccount_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
