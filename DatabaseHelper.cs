@@ -11,7 +11,7 @@ namespace Hospital_Appointment_System
     internal class DatabaseHelper
     {
         // connection string to connect to MySQL database
-        private static string connectionString = "server=localhost;database=HospitalDB;user=root;password=rootpassword;";
+        private static string connectionString = "Server=sql7.freesqldatabase.com;Database=sql7764122;Uid=sql7764122;Pwd=PlffmynkE8;";
 
         // method to get a MySQL connection
         public static MySqlConnection GetConnection()
