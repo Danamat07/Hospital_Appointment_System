@@ -72,6 +72,7 @@
             this.btnPatientLogin.TabIndex = 5;
             this.btnPatientLogin.Text = "Log In";
             this.btnPatientLogin.UseVisualStyleBackColor = false;
+            this.btnPatientLogin.Click += new System.EventHandler(this.btnPatientLogin_Click);
             // 
             // txtPassword
             // 
@@ -171,6 +172,7 @@
             this.btnAdminLogin.TabIndex = 3;
             this.btnAdminLogin.Text = "Log In";
             this.btnAdminLogin.UseVisualStyleBackColor = false;
+            this.btnAdminLogin.Click += new System.EventHandler(this.btnAdminLogin_Click);
             // 
             // btnCreateAccount
             // 
@@ -182,6 +184,7 @@
             this.btnCreateAccount.TabIndex = 6;
             this.btnCreateAccount.Text = "Create Account";
             this.btnCreateAccount.UseVisualStyleBackColor = false;
+            this.btnCreateAccount.Click += new System.EventHandler(this.btnCreateAccount_Click);
             // 
             // label6
             // 
