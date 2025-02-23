@@ -57,7 +57,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(209, 46);
+            this.panel1.Location = new System.Drawing.Point(170, 26);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(468, 307);
             this.panel1.TabIndex = 0;
@@ -151,7 +151,7 @@
             this.panel2.Controls.Add(this.txtAdminPassword);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(209, 359);
+            this.panel2.Location = new System.Drawing.Point(170, 339);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(468, 84);
             this.panel2.TabIndex = 1;
@@ -201,7 +201,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(854, 500);
+            this.ClientSize = new System.Drawing.Size(800, 452);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
