@@ -31,7 +31,7 @@ namespace Hospital_Appointment_System.Controller
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
 
@@ -53,11 +53,10 @@ namespace Hospital_Appointment_System.Controller
             try
             {
                 patientService.UpdatePatient(patient);
-                Console.WriteLine("Patient updated successfully.");
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
 
@@ -66,11 +65,10 @@ namespace Hospital_Appointment_System.Controller
             try
             {
                 patientService.DeletePatient(id);
-                Console.WriteLine("Patient deleted successfully.");
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
 

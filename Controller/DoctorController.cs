@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Hospital_Appointment_System.Domain;
 using Hospital_Appointment_System.Service;
 
@@ -29,7 +30,7 @@ namespace Hospital_Appointment_System.Controller
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
 
@@ -38,11 +39,10 @@ namespace Hospital_Appointment_System.Controller
             try
             {
                 doctorService.AddDoctor(doctor);
-                Console.WriteLine("Doctor added successfully.");
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
 
@@ -51,11 +51,10 @@ namespace Hospital_Appointment_System.Controller
             try
             {
                 doctorService.UpdateDoctor(doctor);
-                Console.WriteLine("Doctor updated successfully.");
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
 
@@ -64,11 +63,10 @@ namespace Hospital_Appointment_System.Controller
             try
             {
                 doctorService.DeleteDoctor(id);
-                Console.WriteLine("Doctor deleted successfully.");
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
     }

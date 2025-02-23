@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Hospital_Appointment_System.Domain;
 using Hospital_Appointment_System.Service;
 
@@ -10,18 +11,18 @@ namespace Hospital_Appointment_System.Controller
 {
     public class AppointmentController
     {
-        private readonly AppointmentService _appointmentService;
+        private readonly AppointmentService appointmentService;
 
         public AppointmentController()
         {
-            _appointmentService = new AppointmentService();
+            appointmentService = new AppointmentService();
         }
 
         public void DisplayAllAppointments()
         {
             try
             {
-                var appointments = _appointmentService.GetAllAppointments();
+                var appointments = appointmentService.GetAllAppointments();
                 foreach (var appointment in appointments)
                 {
                     Console.WriteLine($"ID: {appointment.Id}, PatientID: {appointment.PatientID}, DoctorID: {appointment.DoctorID}, Start: {appointment.StartTime}, End: {appointment.EndTime}, Status: {appointment.Status}");
@@ -29,7 +30,7 @@ namespace Hospital_Appointment_System.Controller
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
 
@@ -37,12 +38,11 @@ namespace Hospital_Appointment_System.Controller
         {
             try
             {
-                _appointmentService.AddAppointment(appointment);
-                Console.WriteLine("Appointment added successfully.");
+                appointmentService.AddAppointment(appointment);
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
 
@@ -50,12 +50,11 @@ namespace Hospital_Appointment_System.Controller
         {
             try
             {
-                _appointmentService.UpdateAppointment(appointment);
-                Console.WriteLine("Appointment updated successfully.");
+                appointmentService.UpdateAppointment(appointment);
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
 
@@ -63,12 +62,11 @@ namespace Hospital_Appointment_System.Controller
         {
             try
             {
-                _appointmentService.DeleteAppointment(id);
-                Console.WriteLine("Appointment deleted successfully.");
+                appointmentService.DeleteAppointment(id);
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
     }
