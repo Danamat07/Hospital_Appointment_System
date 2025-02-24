@@ -33,18 +33,22 @@ namespace Hospital_Appointment_System.UI
             // validate input
             if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password){
                 MessageBox.Show("Please fill in the required fields.");
+                return;
             }
             else if (name.Length < 3 || name.Any(char.IsDigit))
             {
                 MessageBox.Show("Name must be at least 3 letters long and contain no numbers.");
+                return;
             }
             else if (password.Length < 8)
             {
                 MessageBox.Show("Password must be at least 8 characters long.");
+                return;
             }
             else if (!Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
             {
                 MessageBox.Show("Please enter a valid email address.");
+                return;
             }
             try
             {
