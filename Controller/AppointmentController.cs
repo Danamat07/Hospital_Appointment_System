@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Hospital_Appointment_System.Domain;
 using Hospital_Appointment_System.Service;
+using Hospital_Appointment_System.Repository;
 
 namespace Hospital_Appointment_System.Controller
 {
@@ -16,6 +19,11 @@ namespace Hospital_Appointment_System.Controller
         public AppointmentController()
         {
             appointmentService = new AppointmentService();
+        }
+
+        public List<Appointment> GetAllAppointments()
+        {
+            return appointmentService.GetAllAppointments();
         }
 
         public void DisplayAllAppointments()
