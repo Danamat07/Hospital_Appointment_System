@@ -18,6 +18,16 @@ namespace Hospital_Appointment_System.Controller
             doctorService = new DoctorService();
         }
 
+        public List<Doctor> GetAllDoctors()
+        {
+            return doctorService.GetAllDoctors();
+        }
+
+        public Doctor GetDoctorById(int id)
+        {
+            return doctorService.GetDoctorById(id);
+        }
+
         public void DisplayAllDoctors()
         {
             try

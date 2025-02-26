@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Hospital_Appointment_System.Controller;
+using Hospital_Appointment_System.Domain;
+using Mysqlx;
 
 namespace Hospital_Appointment_System.UI
 {
@@ -32,7 +34,7 @@ namespace Hospital_Appointment_System.UI
             }
             else if (adminTabs.SelectedTab == tabAdminManageStaff)
             {
-                // to do
+                LoadDoctors();
             }
         }
 
@@ -49,6 +51,158 @@ namespace Hospital_Appointment_System.UI
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        // method to load all doctors from the dadabase and display in DataGridView
+        private void LoadDoctors()
+        {
+            try
+            {
+                var doctors = doctorController.GetAllDoctors();
+                dataGridView_Staff.DataSource = doctors;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        private void btnAddDoctor_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string doctorName = txtAddDoctorName.Text.Trim();
+                // check input for doctor name
+                if (string.IsNullOrEmpty(doctorName))
+                {
+                    MessageBox.Show("Please enter doctor name.");
+                    return;
+                }
+                if (doctorName.Length < 3 || doctorName.Any(char.IsDigit))
+                {
+                    MessageBox.Show("Name must be at least 3 letters long and contain no numbers.");
+                    return;
+                }
+                // get selected specialization from comboBox
+                var selectedSpecialization = cmbAddDocSpecialization.SelectedItem?.ToString();
+                // check input for specialization
+                if (string.IsNullOrEmpty(selectedSpecialization))
+                {
+                    MessageBox.Show("Please select a specialization.");
+                    return;
+                }
+                // convert specialization to enum type
+                var specialization = (Specialisation)Enum.Parse(typeof(Specialisation), selectedSpecialization);
+                // add doctor
+                doctorController.AddDoctor(new Doctor(0, doctorName, specialization));
+                MessageBox.Show("Doctor added successfully!");
+                // refresh staff list
+                LoadDoctors();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error adding doctor: {ex.Message}");
+            }
+        }
+
+        private void btnUpdateDoctor_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // get the doctor ID entered by the user
+                string doctorIdText = txtIDofDocToUpdate.Text.Trim();
+                // check user input
+                if (string.IsNullOrEmpty(doctorIdText))
+                {
+                    MessageBox.Show("Please enter a doctor ID.");
+                    return;
+                }
+                // parse the ID to an integer
+                if (!int.TryParse(doctorIdText, out int doctorId))
+                {
+                    MessageBox.Show("Please enter a valid doctor ID.");
+                    return;
+                }
+                // get the doctor from the controller by ID
+                var doctorToUpdate = doctorController.GetDoctorById(doctorId);
+                if (doctorToUpdate == null)
+                {
+                    MessageBox.Show("Doctor not found.");
+                    return;
+                }
+                // get the updated name from the textBox
+                string updatedDoctorName = txtUpdateDoctorName.Text.Trim();
+                // check user input for doctor name
+                if (string.IsNullOrEmpty(updatedDoctorName))
+                {
+                    MessageBox.Show("Please enter doctor name.");
+                    return;
+                }
+                if (updatedDoctorName.Length < 3 || updatedDoctorName.Any(char.IsDigit))
+                {
+                    MessageBox.Show("Name must be at least 3 letters long and contain no numbers.");
+                    return;
+                }
+                // get selected specialization from comboBox
+                var selectedSpecialization = cmbUpdateDocSpecialization.SelectedItem?.ToString();
+                // check input for specialization
+                if (string.IsNullOrEmpty(selectedSpecialization))
+                {
+                    MessageBox.Show("Please select a specialization.");
+                    return;
+                }
+                // convert specialization to enum type
+                var updatedSpecialization = (Specialisation)Enum.Parse(typeof(Specialisation), selectedSpecialization);
+                // update doctor
+                doctorToUpdate.Name = updatedDoctorName;
+                doctorToUpdate.Specialization = updatedSpecialization;
+                doctorController.UpdateDoctor(doctorToUpdate);
+                MessageBox.Show("Doctor updated successfully!");
+                // refresh staff list
+                LoadDoctors();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error updating doctor: {ex.Message}");
+            }
+        }
+
+        private void btnDeleteDoctor_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // get the doctor ID entered by the user
+                string doctorIdText = txtIDofDocToRemove.Text.Trim();
+                // check user input
+                if (string.IsNullOrEmpty(doctorIdText))
+                {
+                    MessageBox.Show("Please enter a doctor ID.");
+                    return;
+                }
+                // parse the ID to an integer
+                if (!int.TryParse(doctorIdText, out int doctorId))
+                {
+                    MessageBox.Show("Please enter a valid doctor ID.");
+                    return;
+                }
+                // check if the doctor exists
+                var doctorToDelete = doctorController.GetDoctorById(doctorId);
+
+                if (doctorToDelete == null)
+                {
+                    MessageBox.Show("Doctor not found.");
+                    return;
+                }
+                // delete the doctor
+                doctorController.DeleteDoctor(doctorToDelete.Id);
+                MessageBox.Show("Doctor deleted successfully!");
+                // refresh staff list
+                LoadDoctors();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error deleting doctor: {ex.Message}");
             }
         }
     }
