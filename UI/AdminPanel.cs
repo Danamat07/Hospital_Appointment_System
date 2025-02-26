@@ -14,11 +14,13 @@ namespace Hospital_Appointment_System.UI
     public partial class AdminPanel : Form
     {
         private AppointmentController appointmentController;
+        private DoctorController doctorController;
 
         public AdminPanel()
         {
             InitializeComponent();
             appointmentController = new AppointmentController();
+            doctorController = new DoctorController();
         }
 
         private void adminTabs_SelectedIndexChanged(object sender, EventArgs e)
