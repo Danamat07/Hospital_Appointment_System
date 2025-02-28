@@ -222,7 +222,14 @@ namespace Hospital_Appointment_System.Repository
         public List<Appointment> GetAllAppointments()
         {
             var appointments = new List<Appointment>();
-            string query = "SELECT * FROM Appointment";
+            string query = @"
+                SELECT 
+                    a.ID, a.PatientID, p.Name AS PatientName, 
+                    a.DoctorID, d.Name AS DoctorName, 
+                    a.StartTime, a.EndTime, a.Status
+                FROM Appointment a
+                JOIN Patient p ON a.PatientID = p.ID
+                JOIN Doctor d ON a.DoctorID = d.ID";
             using (var connection = DatabaseHelper.GetConnection())
             {
                 connection.Open();
