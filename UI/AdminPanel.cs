@@ -36,6 +36,22 @@ namespace Hospital_Appointment_System.UI
             {
                 LoadDoctors();
             }
+            else if (adminTabs.SelectedTab == tabAdminManageAppointments)
+            {
+                UpdateAppointmentStatus();
+            }
+        }
+
+        private void UpdateAppointmentStatus()
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
         }
 
         // method to load all appointments from the database and display in DataGridView
@@ -166,6 +182,47 @@ namespace Hospital_Appointment_System.UI
             {
                 MessageBox.Show($"Error updating doctor: {ex.Message}");
             }
+        }
+
+        private void btnUpdateApStatus_Click(object sender, EventArgs e)
+        {
+            // get ID of appointment entered by user
+            string appointmentIdText = txtApIDforStatusUpdate.Text.Trim();
+            // check user input
+            if (string.IsNullOrEmpty(appointmentIdText))
+            {
+                MessageBox.Show("Please enter an appointment ID.");
+                return;
+            }
+            // parse string ID to integer ID
+            if (!int.TryParse(appointmentIdText, out int appointmentId))
+            {
+                MessageBox.Show("Please enter a valid appointment ID.");
+                return;
+            }
+            // get the appointment from the controller by ID
+            var appointmentToUpdate = appointmentController.GetAppointmentById(appointmentId);
+            if (appointmentToUpdate == null)
+            {
+                MessageBox.Show("Appointment not found.");
+                return;
+            }
+            // get selected status from comboBox
+            var selectedStatus = cmbApStatus.SelectedItem?.ToString();
+            // check input for status
+            if (string.IsNullOrEmpty(selectedStatus))
+            {
+                MessageBox.Show("Please select a status.");
+                return;
+            }
+            // convert status to enum type
+            var updatedStatus = (AppointmentStatus)Enum.Parse(typeof(AppointmentStatus), selectedStatus);
+            // update appointment
+            appointmentToUpdate.Status = updatedStatus;
+            appointmentController.UpdateAppointment(appointmentToUpdate);
+            MessageBox.Show("Appointment updated successfully!");
+            // refresh appointment list
+            LoadAppointments();
         }
 
         private void btnDeleteDoctor_Click(object sender, EventArgs e)

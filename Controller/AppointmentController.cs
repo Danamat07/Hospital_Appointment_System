@@ -34,6 +34,19 @@ namespace Hospital_Appointment_System.Controller
             }
         }
 
+        public Appointment GetAppointmentById(int appointmentId)
+        {
+            try
+            {
+                return appointmentService.GetAppointmentById(appointmentId);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+                return null;
+            }
+        }
+
         public List<Appointment> GetAppointmentsByPatientId(int patientId)
         {
             try 
