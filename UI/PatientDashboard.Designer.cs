@@ -34,9 +34,12 @@
             this.tabUpdateAppointment = new System.Windows.Forms.TabPage();
             this.tabDeleteAppointment = new System.Windows.Forms.TabPage();
             this.dgvUpcomingAppointments = new System.Windows.Forms.DataGridView();
+            this.dgvAddAppointment = new System.Windows.Forms.DataGridView();
             this.patientTabs.SuspendLayout();
             this.tabViewAppontments.SuspendLayout();
+            this.tabAddAppointment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUpcomingAppointments)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAddAppointment)).BeginInit();
             this.SuspendLayout();
             // 
             // patientTabs
@@ -66,6 +69,7 @@
             // 
             // tabAddAppointment
             // 
+            this.tabAddAppointment.Controls.Add(this.dgvAddAppointment);
             this.tabAddAppointment.Location = new System.Drawing.Point(4, 25);
             this.tabAddAppointment.Name = "tabAddAppointment";
             this.tabAddAppointment.Padding = new System.Windows.Forms.Padding(3);
@@ -101,6 +105,15 @@
             this.dgvUpcomingAppointments.Size = new System.Drawing.Size(756, 385);
             this.dgvUpcomingAppointments.TabIndex = 0;
             // 
+            // dgvAddAppointment
+            // 
+            this.dgvAddAppointment.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvAddAppointment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAddAppointment.Location = new System.Drawing.Point(6, 6);
+            this.dgvAddAppointment.Name = "dgvAddAppointment";
+            this.dgvAddAppointment.Size = new System.Drawing.Size(360, 262);
+            this.dgvAddAppointment.TabIndex = 0;
+            // 
             // PatientDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -111,7 +124,9 @@
             this.Text = "PatientDashboard";
             this.patientTabs.ResumeLayout(false);
             this.tabViewAppontments.ResumeLayout(false);
+            this.tabAddAppointment.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUpcomingAppointments)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAddAppointment)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -124,5 +139,6 @@
         private System.Windows.Forms.TabPage tabUpdateAppointment;
         private System.Windows.Forms.TabPage tabDeleteAppointment;
         private System.Windows.Forms.DataGridView dgvUpcomingAppointments;
+        private System.Windows.Forms.DataGridView dgvAddAppointment;
     }
 }

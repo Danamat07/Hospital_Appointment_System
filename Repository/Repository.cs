@@ -313,7 +313,10 @@ namespace Hospital_Appointment_System.Repository
                         reader.GetDateTime("EndTime"),
                         (AppointmentStatus)Enum.Parse(typeof(AppointmentStatus), reader.GetString("Status"))
                     );
-                    appointments.Add(appointment);
+                    if (appointment.Status == AppointmentStatus.Scheduled)
+                    {
+                        appointments.Add(appointment);
+                    }
                 }
             }
             return appointments;

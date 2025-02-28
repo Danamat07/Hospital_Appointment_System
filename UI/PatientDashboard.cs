@@ -30,6 +30,18 @@ namespace Hospital_Appointment_System.UI
             {
                 LoadAppointmentsForPatient(patient.Id);
             }
+            else if (patientTabs.SelectedTab == tabAddAppointment)
+            {
+                // to do
+            }
+            else if (patientTabs.SelectedTab == tabUpdateAppointment)
+            {
+                // to do
+            }
+            else if (patientTabs.SelectedTab == tabDeleteAppointment)
+            {
+                // to do
+            }
         }
 
         private void LoadAppointmentsForPatient(int patientId)
