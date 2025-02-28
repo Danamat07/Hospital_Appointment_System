@@ -17,6 +17,18 @@ namespace Hospital_Appointment_System.Service
             appointmentRepository = new AppointmentRepository();
         }
 
+        public List<Appointment> GetAppointmentByPatientId(int patientId)
+        {
+            try
+            {
+                return appointmentRepository.GetAppointmentByPatientId(patientId);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("An error occurred while retrieving appointments.", ex);
+            }
+        }
+
         public List<Appointment> GetAllAppointments()
         {
             try

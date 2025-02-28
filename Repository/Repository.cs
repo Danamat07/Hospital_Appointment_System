@@ -277,6 +277,49 @@ namespace Hospital_Appointment_System.Repository
             return appointment;
         }
 
+        public List<Appointment> GetAppointmentByPatientId(int patientId)
+        {
+            var appointments = new List<Appointment>();
+            string query = @"
+                SELECT 
+                    Appointment.StartTime,
+                    Appointment.EndTime,
+                    Appointment.Status,
+                    Patient.Name AS PatientName,
+                    Doctor.Name AS DoctorName
+                FROM 
+                    Appointment
+                JOIN 
+                    Patient ON Appointment.PatientID = Patient.ID
+                JOIN 
+                    Doctor ON Appointment.DoctorID = Doctor.ID
+                WHERE 
+                    Appointment.PatientID = @PatientId";
+
+            using (var connection = DatabaseHelper.GetConnection())
+            {
+                connection.Open();
+                MySqlCommand cmd = DatabaseHelper.CreateCommand(query, connection);
+                cmd.Parameters.AddWithValue("@PatientId", patientId);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    var appointment = new Appointment(
+                        reader.GetInt32("ID"),
+                        reader.GetInt32("PatientID"),
+                        reader.GetInt32("DoctorID"),
+                        reader.GetDateTime("StartTime"),
+                        reader.GetDateTime("EndTime"),
+                        (AppointmentStatus)Enum.Parse(typeof(AppointmentStatus), reader.GetString("Status"))
+                    );
+                    appointments.Add(appointment);
+                }
+            }
+            return appointments;
+        }
+
+
         public void AddAppointment(Appointment appointment)
         {
             string query = "INSERT INTO Appointment (PatientID, DoctorID, StartTime, EndTime, Status) VALUES (@PatientID, @DoctorID, @StartTime, @EndTime, @Status)";

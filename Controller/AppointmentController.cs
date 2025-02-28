@@ -23,7 +23,28 @@ namespace Hospital_Appointment_System.Controller
 
         public List<Appointment> GetAllAppointments()
         {
-            return appointmentService.GetAllAppointments();
+            try
+            {
+                return appointmentService.GetAllAppointments();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+                return null;
+            }
+        }
+
+        public List<Appointment> GetAppointmentsByPatientId(int patientId)
+        {
+            try 
+            {
+                return appointmentService.GetAppointmentByPatientId(patientId);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+                return null;
+            }
         }
 
         public void DisplayAllAppointments()
