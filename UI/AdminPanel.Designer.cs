@@ -64,6 +64,9 @@
             this.cmbApStatus = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnUpdateApStatus = new System.Windows.Forms.Button();
+            this.btnBackTab1 = new System.Windows.Forms.Button();
+            this.btnBackTab2 = new System.Windows.Forms.Button();
+            this.btnBackTab3 = new System.Windows.Forms.Button();
             this.tabAdminManageStaff.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -81,6 +84,7 @@
             // 
             // tabAdminManageStaff
             // 
+            this.tabAdminManageStaff.Controls.Add(this.btnBackTab2);
             this.tabAdminManageStaff.Controls.Add(this.panel3);
             this.tabAdminManageStaff.Controls.Add(this.panel2);
             this.tabAdminManageStaff.Controls.Add(this.panel1);
@@ -297,9 +301,9 @@
             this.panel1.Controls.Add(this.txtIDofDocToRemove);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(6, 314);
+            this.panel1.Location = new System.Drawing.Point(6, 277);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(390, 83);
+            this.panel1.Size = new System.Drawing.Size(390, 74);
             this.panel1.TabIndex = 2;
             // 
             // btnDeleteDoctor
@@ -348,7 +352,7 @@
             this.dataGridView_Staff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Staff.Location = new System.Drawing.Point(6, 17);
             this.dataGridView_Staff.Name = "dataGridView_Staff";
-            this.dataGridView_Staff.Size = new System.Drawing.Size(390, 285);
+            this.dataGridView_Staff.Size = new System.Drawing.Size(390, 254);
             this.dataGridView_Staff.TabIndex = 0;
             // 
             // adminTabs
@@ -366,6 +370,7 @@
             // 
             // tabAdminViewSchedule
             // 
+            this.tabAdminViewSchedule.Controls.Add(this.btnBackTab1);
             this.tabAdminViewSchedule.Controls.Add(this.dataGridView_Schedule);
             this.tabAdminViewSchedule.Location = new System.Drawing.Point(4, 25);
             this.tabAdminViewSchedule.Name = "tabAdminViewSchedule";
@@ -381,11 +386,12 @@
             this.dataGridView_Schedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Schedule.Location = new System.Drawing.Point(6, 6);
             this.dataGridView_Schedule.Name = "dataGridView_Schedule";
-            this.dataGridView_Schedule.Size = new System.Drawing.Size(756, 385);
+            this.dataGridView_Schedule.Size = new System.Drawing.Size(756, 347);
             this.dataGridView_Schedule.TabIndex = 0;
             // 
             // tabAdminManageAppointments
             // 
+            this.tabAdminManageAppointments.Controls.Add(this.btnBackTab3);
             this.tabAdminManageAppointments.Controls.Add(this.panel5);
             this.tabAdminManageAppointments.Controls.Add(this.dataGridView1);
             this.tabAdminManageAppointments.Location = new System.Drawing.Point(4, 25);
@@ -401,7 +407,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(384, 391);
+            this.dataGridView1.Size = new System.Drawing.Size(384, 346);
             this.dataGridView1.TabIndex = 0;
             // 
             // panel5
@@ -472,6 +478,38 @@
             this.btnUpdateApStatus.UseVisualStyleBackColor = false;
             this.btnUpdateApStatus.Click += new System.EventHandler(this.btnUpdateApStatus_Click);
             // 
+            // btnBackTab1
+            // 
+            this.btnBackTab1.Location = new System.Drawing.Point(356, 360);
+            this.btnBackTab1.Name = "btnBackTab1";
+            this.btnBackTab1.Size = new System.Drawing.Size(75, 31);
+            this.btnBackTab1.TabIndex = 1;
+            this.btnBackTab1.Text = "Back";
+            this.btnBackTab1.UseVisualStyleBackColor = true;
+            this.btnBackTab1.Click += new System.EventHandler(this.btnBackTab1_Click);
+            // 
+            // btnBackTab2
+            // 
+            this.btnBackTab2.BackColor = System.Drawing.Color.Bisque;
+            this.btnBackTab2.Location = new System.Drawing.Point(154, 358);
+            this.btnBackTab2.Name = "btnBackTab2";
+            this.btnBackTab2.Size = new System.Drawing.Size(75, 33);
+            this.btnBackTab2.TabIndex = 7;
+            this.btnBackTab2.Text = "Back";
+            this.btnBackTab2.UseVisualStyleBackColor = false;
+            this.btnBackTab2.Click += new System.EventHandler(this.btnBackTab2_Click);
+            // 
+            // btnBackTab3
+            // 
+            this.btnBackTab3.BackColor = System.Drawing.Color.Bisque;
+            this.btnBackTab3.Location = new System.Drawing.Point(150, 355);
+            this.btnBackTab3.Name = "btnBackTab3";
+            this.btnBackTab3.Size = new System.Drawing.Size(75, 33);
+            this.btnBackTab3.TabIndex = 8;
+            this.btnBackTab3.Text = "Back";
+            this.btnBackTab3.UseVisualStyleBackColor = false;
+            this.btnBackTab3.Click += new System.EventHandler(this.btnBackTab3_Click);
+            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -541,5 +579,8 @@
         private System.Windows.Forms.ComboBox cmbApStatus;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnUpdateApStatus;
+        private System.Windows.Forms.Button btnBackTab1;
+        private System.Windows.Forms.Button btnBackTab2;
+        private System.Windows.Forms.Button btnBackTab3;
     }
 }

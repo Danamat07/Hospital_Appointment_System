@@ -262,5 +262,30 @@ namespace Hospital_Appointment_System.UI
                 MessageBox.Show($"Error deleting doctor: {ex.Message}");
             }
         }
+
+        // method to return to login/main page
+        private void btnBackTab1_Click(object sender, EventArgs e)
+        {
+            // Hide current form
+            this.Hide();
+            // Create a new instance of the LoginForm
+            LoginForm loginForm = new LoginForm();
+            // Show the login form
+            loginForm.Show();
+        }
+
+        private void btnBackTab2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+        }
+
+        private void btnBackTab3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+        }
     }
 }
