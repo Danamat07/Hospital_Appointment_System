@@ -44,20 +44,23 @@
             this.btnBackTab2 = new System.Windows.Forms.Button();
             this.dgvAddAppointment = new System.Windows.Forms.DataGridView();
             this.tabUpdateAppointment = new System.Windows.Forms.TabPage();
-            this.tabDeleteAppointment = new System.Windows.Forms.TabPage();
-            this.dgvUpdateAppointment = new System.Windows.Forms.DataGridView();
-            this.dgvCancelAppointment = new System.Windows.Forms.DataGridView();
-            this.btnBackTab3 = new System.Windows.Forms.Button();
-            this.btnBackTab4 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtIDofAppToUpdate = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dtpUpdateAppointmentTime = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dtpUpdateAppointmentDate = new System.Windows.Forms.DateTimePicker();
             this.btnUpdateAppointment = new System.Windows.Forms.Button();
+            this.dtpUpdateAppointmentDate = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dtpUpdateAppointmentTime = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtIDofAppToUpdate = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnBackTab3 = new System.Windows.Forms.Button();
+            this.dgvUpdateAppointment = new System.Windows.Forms.DataGridView();
+            this.tabDeleteAppointment = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.txtIDofAppToDelete = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnBackTab4 = new System.Windows.Forms.Button();
+            this.dgvCancelAppointment = new System.Windows.Forms.DataGridView();
+            this.btnDeleteAppointment = new System.Windows.Forms.Button();
             this.patientTabs.SuspendLayout();
             this.tabViewAppontments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUpcomingAppointments)).BeginInit();
@@ -65,10 +68,11 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddAppointment)).BeginInit();
             this.tabUpdateAppointment.SuspendLayout();
-            this.tabDeleteAppointment.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUpdateAppointment)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCancelAppointment)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUpdateAppointment)).BeginInit();
+            this.tabDeleteAppointment.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCancelAppointment)).BeginInit();
             this.SuspendLayout();
             // 
             // patientTabs
@@ -253,57 +257,6 @@
             this.tabUpdateAppointment.Text = "Update Appointment";
             this.tabUpdateAppointment.UseVisualStyleBackColor = true;
             // 
-            // tabDeleteAppointment
-            // 
-            this.tabDeleteAppointment.Controls.Add(this.panel3);
-            this.tabDeleteAppointment.Controls.Add(this.btnBackTab4);
-            this.tabDeleteAppointment.Controls.Add(this.dgvCancelAppointment);
-            this.tabDeleteAppointment.Location = new System.Drawing.Point(4, 25);
-            this.tabDeleteAppointment.Name = "tabDeleteAppointment";
-            this.tabDeleteAppointment.Size = new System.Drawing.Size(768, 397);
-            this.tabDeleteAppointment.TabIndex = 3;
-            this.tabDeleteAppointment.Text = "Cancel Appointment";
-            this.tabDeleteAppointment.UseVisualStyleBackColor = true;
-            // 
-            // dgvUpdateAppointment
-            // 
-            this.dgvUpdateAppointment.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvUpdateAppointment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUpdateAppointment.Location = new System.Drawing.Point(13, 12);
-            this.dgvUpdateAppointment.Name = "dgvUpdateAppointment";
-            this.dgvUpdateAppointment.Size = new System.Drawing.Size(360, 345);
-            this.dgvUpdateAppointment.TabIndex = 1;
-            // 
-            // dgvCancelAppointment
-            // 
-            this.dgvCancelAppointment.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvCancelAppointment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCancelAppointment.Location = new System.Drawing.Point(13, 13);
-            this.dgvCancelAppointment.Name = "dgvCancelAppointment";
-            this.dgvCancelAppointment.Size = new System.Drawing.Size(360, 345);
-            this.dgvCancelAppointment.TabIndex = 1;
-            // 
-            // btnBackTab3
-            // 
-            this.btnBackTab3.BackColor = System.Drawing.Color.Bisque;
-            this.btnBackTab3.Location = new System.Drawing.Point(339, 363);
-            this.btnBackTab3.Name = "btnBackTab3";
-            this.btnBackTab3.Size = new System.Drawing.Size(75, 31);
-            this.btnBackTab3.TabIndex = 4;
-            this.btnBackTab3.Text = "Back";
-            this.btnBackTab3.UseVisualStyleBackColor = false;
-            this.btnBackTab3.Click += new System.EventHandler(this.btnBackTab3_Click);
-            // 
-            // btnBackTab4
-            // 
-            this.btnBackTab4.BackColor = System.Drawing.Color.Bisque;
-            this.btnBackTab4.Location = new System.Drawing.Point(338, 363);
-            this.btnBackTab4.Name = "btnBackTab4";
-            this.btnBackTab4.Size = new System.Drawing.Size(75, 31);
-            this.btnBackTab4.TabIndex = 4;
-            this.btnBackTab4.Text = "Back";
-            this.btnBackTab4.UseVisualStyleBackColor = false;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SeaShell;
@@ -319,39 +272,33 @@
             this.panel2.Size = new System.Drawing.Size(380, 345);
             this.panel2.TabIndex = 5;
             // 
-            // panel3
+            // btnUpdateAppointment
             // 
-            this.panel3.BackColor = System.Drawing.Color.SeaShell;
-            this.panel3.Location = new System.Drawing.Point(379, 13);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(380, 345);
-            this.panel3.TabIndex = 6;
+            this.btnUpdateAppointment.BackColor = System.Drawing.Color.Bisque;
+            this.btnUpdateAppointment.Location = new System.Drawing.Point(120, 262);
+            this.btnUpdateAppointment.Name = "btnUpdateAppointment";
+            this.btnUpdateAppointment.Size = new System.Drawing.Size(110, 43);
+            this.btnUpdateAppointment.TabIndex = 7;
+            this.btnUpdateAppointment.Text = "Update Appointment";
+            this.btnUpdateAppointment.UseVisualStyleBackColor = false;
+            this.btnUpdateAppointment.Click += new System.EventHandler(this.btnUpdateAppointment_Click);
             // 
-            // label4
+            // dtpUpdateAppointmentDate
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 47);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(320, 32);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Choose which appontment you want to update\r\n                            (enter ID" +
-    "):";
+            this.dtpUpdateAppointmentDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpUpdateAppointmentDate.Location = new System.Drawing.Point(79, 143);
+            this.dtpUpdateAppointmentDate.Name = "dtpUpdateAppointmentDate";
+            this.dtpUpdateAppointmentDate.Size = new System.Drawing.Size(200, 22);
+            this.dtpUpdateAppointmentDate.TabIndex = 6;
             // 
-            // txtIDofAppToUpdate
+            // label6
             // 
-            this.txtIDofAppToUpdate.Location = new System.Drawing.Point(129, 82);
-            this.txtIDofAppToUpdate.Name = "txtIDofAppToUpdate";
-            this.txtIDofAppToUpdate.Size = new System.Drawing.Size(90, 22);
-            this.txtIDofAppToUpdate.TabIndex = 1;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(126, 186);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 16);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "New Time:";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(126, 124);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(78, 16);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "New Date:";
             // 
             // dtpUpdateAppointmentTime
             // 
@@ -364,33 +311,121 @@
             this.dtpUpdateAppointmentTime.TabIndex = 4;
             this.dtpUpdateAppointmentTime.ValueChanged += new System.EventHandler(this.dtpUpdateAppointmentTime_ValueChanged);
             // 
-            // label6
+            // label5
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(126, 124);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 16);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "New Date:";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(126, 186);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 16);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "New Time:";
             // 
-            // dtpUpdateAppointmentDate
+            // txtIDofAppToUpdate
             // 
-            this.dtpUpdateAppointmentDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpUpdateAppointmentDate.Location = new System.Drawing.Point(79, 143);
-            this.dtpUpdateAppointmentDate.Name = "dtpUpdateAppointmentDate";
-            this.dtpUpdateAppointmentDate.Size = new System.Drawing.Size(200, 22);
-            this.dtpUpdateAppointmentDate.TabIndex = 6;
+            this.txtIDofAppToUpdate.Location = new System.Drawing.Point(129, 82);
+            this.txtIDofAppToUpdate.Name = "txtIDofAppToUpdate";
+            this.txtIDofAppToUpdate.Size = new System.Drawing.Size(90, 22);
+            this.txtIDofAppToUpdate.TabIndex = 1;
             // 
-            // btnUpdateAppointment
+            // label4
             // 
-            this.btnUpdateAppointment.BackColor = System.Drawing.Color.Bisque;
-            this.btnUpdateAppointment.Location = new System.Drawing.Point(120, 262);
-            this.btnUpdateAppointment.Name = "btnUpdateAppointment";
-            this.btnUpdateAppointment.Size = new System.Drawing.Size(110, 43);
-            this.btnUpdateAppointment.TabIndex = 7;
-            this.btnUpdateAppointment.Text = "Update Appointment";
-            this.btnUpdateAppointment.UseVisualStyleBackColor = false;
-            this.btnUpdateAppointment.Click += new System.EventHandler(this.btnUpdateAppointment_Click);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(27, 47);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(320, 32);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Choose which appontment you want to update\r\n                            (enter ID" +
+    "):";
+            // 
+            // btnBackTab3
+            // 
+            this.btnBackTab3.BackColor = System.Drawing.Color.Bisque;
+            this.btnBackTab3.Location = new System.Drawing.Point(339, 363);
+            this.btnBackTab3.Name = "btnBackTab3";
+            this.btnBackTab3.Size = new System.Drawing.Size(75, 31);
+            this.btnBackTab3.TabIndex = 4;
+            this.btnBackTab3.Text = "Back";
+            this.btnBackTab3.UseVisualStyleBackColor = false;
+            this.btnBackTab3.Click += new System.EventHandler(this.btnBackTab3_Click);
+            // 
+            // dgvUpdateAppointment
+            // 
+            this.dgvUpdateAppointment.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvUpdateAppointment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUpdateAppointment.Location = new System.Drawing.Point(13, 12);
+            this.dgvUpdateAppointment.Name = "dgvUpdateAppointment";
+            this.dgvUpdateAppointment.Size = new System.Drawing.Size(360, 345);
+            this.dgvUpdateAppointment.TabIndex = 1;
+            // 
+            // tabDeleteAppointment
+            // 
+            this.tabDeleteAppointment.Controls.Add(this.panel3);
+            this.tabDeleteAppointment.Controls.Add(this.btnBackTab4);
+            this.tabDeleteAppointment.Controls.Add(this.dgvCancelAppointment);
+            this.tabDeleteAppointment.Location = new System.Drawing.Point(4, 25);
+            this.tabDeleteAppointment.Name = "tabDeleteAppointment";
+            this.tabDeleteAppointment.Size = new System.Drawing.Size(768, 397);
+            this.tabDeleteAppointment.TabIndex = 3;
+            this.tabDeleteAppointment.Text = "Cancel Appointment";
+            this.tabDeleteAppointment.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.SeaShell;
+            this.panel3.Controls.Add(this.btnDeleteAppointment);
+            this.panel3.Controls.Add(this.txtIDofAppToDelete);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Location = new System.Drawing.Point(379, 13);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(380, 345);
+            this.panel3.TabIndex = 6;
+            // 
+            // txtIDofAppToDelete
+            // 
+            this.txtIDofAppToDelete.Location = new System.Drawing.Point(135, 143);
+            this.txtIDofAppToDelete.Name = "txtIDofAppToDelete";
+            this.txtIDofAppToDelete.Size = new System.Drawing.Size(90, 22);
+            this.txtIDofAppToDelete.TabIndex = 2;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(29, 95);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(318, 32);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Choose which appontment you want to cancel\r\n                            (enter ID" +
+    "):";
+            // 
+            // btnBackTab4
+            // 
+            this.btnBackTab4.BackColor = System.Drawing.Color.Bisque;
+            this.btnBackTab4.Location = new System.Drawing.Point(338, 363);
+            this.btnBackTab4.Name = "btnBackTab4";
+            this.btnBackTab4.Size = new System.Drawing.Size(75, 31);
+            this.btnBackTab4.TabIndex = 4;
+            this.btnBackTab4.Text = "Back";
+            this.btnBackTab4.UseVisualStyleBackColor = false;
+            // 
+            // dgvCancelAppointment
+            // 
+            this.dgvCancelAppointment.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvCancelAppointment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCancelAppointment.Location = new System.Drawing.Point(13, 13);
+            this.dgvCancelAppointment.Name = "dgvCancelAppointment";
+            this.dgvCancelAppointment.Size = new System.Drawing.Size(360, 345);
+            this.dgvCancelAppointment.TabIndex = 1;
+            // 
+            // btnDeleteAppointment
+            // 
+            this.btnDeleteAppointment.BackColor = System.Drawing.Color.Bisque;
+            this.btnDeleteAppointment.Location = new System.Drawing.Point(125, 215);
+            this.btnDeleteAppointment.Name = "btnDeleteAppointment";
+            this.btnDeleteAppointment.Size = new System.Drawing.Size(110, 43);
+            this.btnDeleteAppointment.TabIndex = 8;
+            this.btnDeleteAppointment.Text = "Cancel Appointment";
+            this.btnDeleteAppointment.UseVisualStyleBackColor = false;
+            this.btnDeleteAppointment.Click += new System.EventHandler(this.btnDeleteAppointment_Click);
             // 
             // PatientDashboard
             // 
@@ -408,11 +443,13 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddAppointment)).EndInit();
             this.tabUpdateAppointment.ResumeLayout(false);
-            this.tabDeleteAppointment.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUpdateAppointment)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCancelAppointment)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUpdateAppointment)).EndInit();
+            this.tabDeleteAppointment.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCancelAppointment)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -449,5 +486,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dtpUpdateAppointmentTime;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtIDofAppToDelete;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnDeleteAppointment;
     }
 }

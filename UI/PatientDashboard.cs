@@ -205,6 +205,43 @@ namespace Hospital_Appointment_System.UI
             }
         }
 
+        private void btnDeleteAppointment_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // get the appointment ID entered by the user
+                string appointmentIdText = txtIDofAppToDelete.Text.Trim();
+                // check user input
+                if (string.IsNullOrEmpty(appointmentIdText))
+                {
+                    MessageBox.Show("Please enter an appointment ID.");
+                    return;
+                }
+                // parse the ID to an integer
+                if (!int.TryParse(appointmentIdText, out int appointmentId))
+                {
+                    MessageBox.Show("Please enter a valid appointment ID.");
+                    return;
+                }
+                // check if appointment exists
+                var appointmentToDelete = appointmentController.GetAppointmentById(appointmentId);
+                if (appointmentToDelete == null)
+                {
+                    MessageBox.Show("Appointment not found.");
+                    return;
+                }
+                // delete appointment
+                appointmentController.DeleteAppointment(appointmentId);
+                MessageBox.Show("Appointment deleted successfully!");
+                // refresh appointment list
+                LoadAppointmentsForPatient(patient.Id, dgvCancelAppointment);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
         private void dtpAppointmentTime_ValueChanged(object sender, EventArgs e)
         {
             DateTime selectedTime = dtpAppointmentTime.Value;
