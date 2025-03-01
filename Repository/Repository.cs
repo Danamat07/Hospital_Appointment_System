@@ -7,6 +7,7 @@ using MySql.Data.MySqlClient;
 using Hospital_Appointment_System.Domain;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Hospital_Appointment_System.Repository
 {
@@ -215,7 +216,42 @@ namespace Hospital_Appointment_System.Repository
                 cmd.ExecuteNonQuery();
             }
         }
+
+        // finds the first available doctor based on given specialization and appointment start time
+        public Doctor GetAvailableDoctor(string specialization, DateTime startTime)
+        {
+            Doctor availableDoctor = null;
+            string query = @"
+                SELECT d.ID, d.Name, d.Specialization 
+                FROM Doctor d
+                WHERE d.Specialization = @Specialization 
+                AND NOT EXISTS (
+                    SELECT 1 FROM Appointment a
+                    WHERE a.DoctorID = d.ID 
+                    AND @StartTime BETWEEN a.StartTime AND a.EndTime
+                )
+                LIMIT 1"; // get the first available doctor
+            using (var connection = DatabaseHelper.GetConnection())
+            {
+                connection.Open();
+                MySqlCommand cmd = DatabaseHelper.CreateCommand(query, connection);
+                cmd.Parameters.AddWithValue("@Specialization", specialization);
+                cmd.Parameters.AddWithValue("@StartTime", startTime);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    availableDoctor = new Doctor(
+                        reader.GetInt32("ID"),
+                        reader.GetString("Name"),
+                        (Specialisation)Enum.Parse(typeof(Specialisation), reader.GetString("Specialization"))
+                    );
+                }
+            }
+            return availableDoctor;
+        }
     }
+
+    
 
     public class AppointmentRepository
     {

@@ -41,6 +41,18 @@ namespace Hospital_Appointment_System.Service
             }
         }
 
+        public Doctor GetAvailableDoctor(string specialization, DateTime startTime)
+        {
+            try
+            {
+                return doctorRepository.GetAvailableDoctor(specialization, startTime);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"An error occurred while retrieving an available doctor.", ex);
+            }
+        }
+
         public void AddDoctor(Doctor doctor)
         {
             try

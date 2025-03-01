@@ -28,6 +28,11 @@ namespace Hospital_Appointment_System.Controller
             return doctorService.GetDoctorById(id);
         }
 
+        public Doctor GetAvailableDoctor(string specialization, DateTime startTime)
+        {
+            return doctorService.GetAvailableDoctor(specialization, startTime);
+        }
+
         public void DisplayAllDoctors()
         {
             try
