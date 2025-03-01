@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.tabAdminManageStaff = new System.Windows.Forms.TabPage();
+            this.btnBackTab2 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtIDofDocToUpdate = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -55,18 +56,17 @@
             this.dataGridView_Staff = new System.Windows.Forms.DataGridView();
             this.adminTabs = new System.Windows.Forms.TabControl();
             this.tabAdminViewSchedule = new System.Windows.Forms.TabPage();
+            this.btnBackTab1 = new System.Windows.Forms.Button();
             this.dataGridView_Schedule = new System.Windows.Forms.DataGridView();
             this.tabAdminManageAppointments = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnBackTab3 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.txtApIDforStatusUpdate = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.cmbApStatus = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnUpdateApStatus = new System.Windows.Forms.Button();
-            this.btnBackTab1 = new System.Windows.Forms.Button();
-            this.btnBackTab2 = new System.Windows.Forms.Button();
-            this.btnBackTab3 = new System.Windows.Forms.Button();
+            this.cmbApStatus = new System.Windows.Forms.ComboBox();
+            this.txtApIDforStatusUpdate = new System.Windows.Forms.TextBox();
+            this.dataGridView_Appointments = new System.Windows.Forms.DataGridView();
             this.tabAdminManageStaff.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -78,8 +78,8 @@
             this.tabAdminViewSchedule.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Schedule)).BeginInit();
             this.tabAdminManageAppointments.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Appointments)).BeginInit();
             this.SuspendLayout();
             // 
             // tabAdminManageStaff
@@ -96,6 +96,17 @@
             this.tabAdminManageStaff.TabIndex = 1;
             this.tabAdminManageStaff.Text = "Manage Staff";
             this.tabAdminManageStaff.UseVisualStyleBackColor = true;
+            // 
+            // btnBackTab2
+            // 
+            this.btnBackTab2.BackColor = System.Drawing.Color.Bisque;
+            this.btnBackTab2.Location = new System.Drawing.Point(154, 358);
+            this.btnBackTab2.Name = "btnBackTab2";
+            this.btnBackTab2.Size = new System.Drawing.Size(75, 33);
+            this.btnBackTab2.TabIndex = 7;
+            this.btnBackTab2.Text = "Back";
+            this.btnBackTab2.UseVisualStyleBackColor = false;
+            this.btnBackTab2.Click += new System.EventHandler(this.btnBackTab2_Click);
             // 
             // panel3
             // 
@@ -380,6 +391,16 @@
             this.tabAdminViewSchedule.Text = "View Schedule";
             this.tabAdminViewSchedule.UseVisualStyleBackColor = true;
             // 
+            // btnBackTab1
+            // 
+            this.btnBackTab1.Location = new System.Drawing.Point(356, 360);
+            this.btnBackTab1.Name = "btnBackTab1";
+            this.btnBackTab1.Size = new System.Drawing.Size(75, 31);
+            this.btnBackTab1.TabIndex = 1;
+            this.btnBackTab1.Text = "Back";
+            this.btnBackTab1.UseVisualStyleBackColor = true;
+            this.btnBackTab1.Click += new System.EventHandler(this.btnBackTab1_Click);
+            // 
             // dataGridView_Schedule
             // 
             this.dataGridView_Schedule.BackgroundColor = System.Drawing.SystemColors.ControlLight;
@@ -393,7 +414,7 @@
             // 
             this.tabAdminManageAppointments.Controls.Add(this.btnBackTab3);
             this.tabAdminManageAppointments.Controls.Add(this.panel5);
-            this.tabAdminManageAppointments.Controls.Add(this.dataGridView1);
+            this.tabAdminManageAppointments.Controls.Add(this.dataGridView_Appointments);
             this.tabAdminManageAppointments.Location = new System.Drawing.Point(4, 25);
             this.tabAdminManageAppointments.Name = "tabAdminManageAppointments";
             this.tabAdminManageAppointments.Size = new System.Drawing.Size(768, 397);
@@ -401,14 +422,16 @@
             this.tabAdminManageAppointments.Text = "Manage Appointments Status";
             this.tabAdminManageAppointments.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // btnBackTab3
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(384, 346);
-            this.dataGridView1.TabIndex = 0;
+            this.btnBackTab3.BackColor = System.Drawing.Color.Bisque;
+            this.btnBackTab3.Location = new System.Drawing.Point(150, 355);
+            this.btnBackTab3.Name = "btnBackTab3";
+            this.btnBackTab3.Size = new System.Drawing.Size(75, 33);
+            this.btnBackTab3.TabIndex = 8;
+            this.btnBackTab3.Text = "Back";
+            this.btnBackTab3.UseVisualStyleBackColor = false;
+            this.btnBackTab3.Click += new System.EventHandler(this.btnBackTab3_Click);
             // 
             // panel5
             // 
@@ -424,13 +447,6 @@
             this.panel5.Size = new System.Drawing.Size(372, 391);
             this.panel5.TabIndex = 1;
             // 
-            // txtApIDforStatusUpdate
-            // 
-            this.txtApIDforStatusUpdate.Location = new System.Drawing.Point(120, 91);
-            this.txtApIDforStatusUpdate.Name = "txtApIDforStatusUpdate";
-            this.txtApIDforStatusUpdate.Size = new System.Drawing.Size(103, 22);
-            this.txtApIDforStatusUpdate.TabIndex = 1;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -440,19 +456,6 @@
             this.label11.Size = new System.Drawing.Size(88, 16);
             this.label11.TabIndex = 2;
             this.label11.Text = "New Status:";
-            // 
-            // cmbApStatus
-            // 
-            this.cmbApStatus.FormattingEnabled = true;
-            this.cmbApStatus.Items.AddRange(new object[] {
-            "Scheduled",
-            "Completed",
-            "Canceled",
-            "Missed"});
-            this.cmbApStatus.Location = new System.Drawing.Point(100, 175);
-            this.cmbApStatus.Name = "cmbApStatus";
-            this.cmbApStatus.Size = new System.Drawing.Size(143, 24);
-            this.cmbApStatus.TabIndex = 3;
             // 
             // label10
             // 
@@ -478,37 +481,34 @@
             this.btnUpdateApStatus.UseVisualStyleBackColor = false;
             this.btnUpdateApStatus.Click += new System.EventHandler(this.btnUpdateApStatus_Click);
             // 
-            // btnBackTab1
+            // cmbApStatus
             // 
-            this.btnBackTab1.Location = new System.Drawing.Point(356, 360);
-            this.btnBackTab1.Name = "btnBackTab1";
-            this.btnBackTab1.Size = new System.Drawing.Size(75, 31);
-            this.btnBackTab1.TabIndex = 1;
-            this.btnBackTab1.Text = "Back";
-            this.btnBackTab1.UseVisualStyleBackColor = true;
-            this.btnBackTab1.Click += new System.EventHandler(this.btnBackTab1_Click);
+            this.cmbApStatus.FormattingEnabled = true;
+            this.cmbApStatus.Items.AddRange(new object[] {
+            "Scheduled",
+            "Completed",
+            "Canceled",
+            "Missed"});
+            this.cmbApStatus.Location = new System.Drawing.Point(100, 175);
+            this.cmbApStatus.Name = "cmbApStatus";
+            this.cmbApStatus.Size = new System.Drawing.Size(143, 24);
+            this.cmbApStatus.TabIndex = 3;
             // 
-            // btnBackTab2
+            // txtApIDforStatusUpdate
             // 
-            this.btnBackTab2.BackColor = System.Drawing.Color.Bisque;
-            this.btnBackTab2.Location = new System.Drawing.Point(154, 358);
-            this.btnBackTab2.Name = "btnBackTab2";
-            this.btnBackTab2.Size = new System.Drawing.Size(75, 33);
-            this.btnBackTab2.TabIndex = 7;
-            this.btnBackTab2.Text = "Back";
-            this.btnBackTab2.UseVisualStyleBackColor = false;
-            this.btnBackTab2.Click += new System.EventHandler(this.btnBackTab2_Click);
+            this.txtApIDforStatusUpdate.Location = new System.Drawing.Point(120, 91);
+            this.txtApIDforStatusUpdate.Name = "txtApIDforStatusUpdate";
+            this.txtApIDforStatusUpdate.Size = new System.Drawing.Size(103, 22);
+            this.txtApIDforStatusUpdate.TabIndex = 1;
             // 
-            // btnBackTab3
+            // dataGridView_Appointments
             // 
-            this.btnBackTab3.BackColor = System.Drawing.Color.Bisque;
-            this.btnBackTab3.Location = new System.Drawing.Point(150, 355);
-            this.btnBackTab3.Name = "btnBackTab3";
-            this.btnBackTab3.Size = new System.Drawing.Size(75, 33);
-            this.btnBackTab3.TabIndex = 8;
-            this.btnBackTab3.Text = "Back";
-            this.btnBackTab3.UseVisualStyleBackColor = false;
-            this.btnBackTab3.Click += new System.EventHandler(this.btnBackTab3_Click);
+            this.dataGridView_Appointments.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridView_Appointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Appointments.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView_Appointments.Name = "dataGridView_Appointments";
+            this.dataGridView_Appointments.Size = new System.Drawing.Size(384, 346);
+            this.dataGridView_Appointments.TabIndex = 0;
             // 
             // AdminPanel
             // 
@@ -534,9 +534,9 @@
             this.tabAdminViewSchedule.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Schedule)).EndInit();
             this.tabAdminManageAppointments.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Appointments)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -572,7 +572,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtIDofDocToUpdate;
         private System.Windows.Forms.TabPage tabAdminManageAppointments;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView_Appointments;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtApIDforStatusUpdate;

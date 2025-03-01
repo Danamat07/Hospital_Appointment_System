@@ -32,7 +32,7 @@ namespace Hospital_Appointment_System.UI
             }
             else if (patientTabs.SelectedTab == tabAddAppointment)
             {
-                // to do
+                ScheduleNewAppointment();
             }
             else if (patientTabs.SelectedTab == tabUpdateAppointment)
             {
@@ -41,6 +41,28 @@ namespace Hospital_Appointment_System.UI
             else if (patientTabs.SelectedTab == tabDeleteAppointment)
             {
                 // to do
+            }
+        }
+
+        ScheduleNewAppointment()
+        {
+            try
+            {
+                // Get selected date
+                DateTime selectedDate = dtpAppointmentDate.Value.Date;
+                // Get selected time
+                DateTime selectedTime = dtpAppointmentTime.Value;
+                // Combine date and time into one DateTime object
+                DateTime appointmentStartDateTime = new DateTime(
+                    selectedDate.Year, selectedDate.Month, selectedDate.Day,
+                    selectedTime.Hour, selectedTime.Minute, 0
+                );
+                int patientId = patient.Id;
+                // -------------------------------------------------------------------------
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
 
@@ -57,6 +79,25 @@ namespace Hospital_Appointment_System.UI
             {
                 MessageBox.Show($"Error: {ex.Message}");
             }
+        }
+
+        private void btnBackTab1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+        }
+
+        private void btnBackTab2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

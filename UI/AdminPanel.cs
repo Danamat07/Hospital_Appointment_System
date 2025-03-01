@@ -46,7 +46,8 @@ namespace Hospital_Appointment_System.UI
         {
             try
             {
-
+                var appointments = appointmentController.GetAllAppointments();
+                dataGridView_Appointments.DataSource = appointments;
             }
             catch (Exception ex)
             {
