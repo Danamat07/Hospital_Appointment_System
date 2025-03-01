@@ -155,6 +155,7 @@
             this.dtpAppointmentTime.ShowUpDown = true;
             this.dtpAppointmentTime.Size = new System.Drawing.Size(200, 22);
             this.dtpAppointmentTime.TabIndex = 3;
+            this.dtpAppointmentTime.ValueChanged += new System.EventHandler(this.dtpAppointmentTime_ValueChanged);
             // 
             // label2
             // 

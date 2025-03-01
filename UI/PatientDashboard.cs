@@ -113,5 +113,21 @@ namespace Hospital_Appointment_System.UI
                 MessageBox.Show($"Error: {ex.Message}");
             }
         }
+
+        private void dtpAppointmentTime_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime selectedTime = dtpAppointmentTime.Value;
+            int hour = selectedTime.Hour;
+
+            // restrict selection between 8:00 AM and 5:00 PM
+            if (hour < 8)
+            {
+                dtpAppointmentTime.Value = new DateTime(selectedTime.Year, selectedTime.Month, selectedTime.Day, 8, 0, 0);
+            }
+            else if (hour >= 17) // 5 PM is the last valid slot
+            {
+                dtpAppointmentTime.Value = new DateTime(selectedTime.Year, selectedTime.Month, selectedTime.Day, 16, 30, 0);
+            }
+        }
     }
 }
