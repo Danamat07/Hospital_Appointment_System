@@ -15,12 +15,14 @@ namespace Hospital_Appointment_System.UI
     public partial class PatientDashboard : Form
     {
         private AppointmentController appointmentController;
+        private DoctorController doctorController;
         private Patient patient;
 
         public PatientDashboard(Patient loggedPatient)
         {
             InitializeComponent();
             appointmentController = new AppointmentController();
+            doctorController = new DoctorController();
             patient = loggedPatient;
         }
 
@@ -43,28 +45,6 @@ namespace Hospital_Appointment_System.UI
                 // to do
             }
         }
-
-        //ScheduleNewAppointment()
-        //{
-        //    try
-        //    {
-        //        // Get selected date
-        //        DateTime selectedDate = dtpAppointmentDate.Value.Date;
-        //        // Get selected time
-        //        DateTime selectedTime = dtpAppointmentTime.Value;
-        //        // Combine date and time into one DateTime object
-        //        DateTime appointmentStartDateTime = new DateTime(
-        //            selectedDate.Year, selectedDate.Month, selectedDate.Day,
-        //            selectedTime.Hour, selectedTime.Minute, 0
-        //        );
-        //        int patientId = patient.Id;
-        //        // -------------------------------------------------------------------------
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show($"Error: {ex.Message}");
-        //    }
-        //}
 
         private void LoadAppointmentsForPatient(int patientId, DataGridView dgv)
         {
@@ -95,9 +75,36 @@ namespace Hospital_Appointment_System.UI
             loginForm.Show();
         }
 
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        private void btnAddAppointment_Click(object sender, EventArgs e)
         {
-
+            // get selected date and time
+            DateTime selectedDate = dtpAppointmentDate.Value.Date;
+            DateTime selectedTime = dtpAppointmentTime.Value;
+            // combine date and time for appointment startTime
+            DateTime startTime = new DateTime(selectedDate.Year, selectedDate.Month, selectedDate.Day,
+                selectedDate.Hour, selectedDate.Minute, 0);
+            // set endTime 30 min after startTime
+            DateTime endTime = startTime.AddMinutes(30);
+            // get selected doctor specialization
+            string specialization = cmbAddDocSpecialization.SelectedItem?.ToString();
+            if (string.IsNullOrEmpty(specialization))
+            {
+                MessageBox.Show("Please select a doctor specialization.");
+                return;
+            }
+            // get available doctor based on specialization
+            Doctor doctor = DoctorController.GetAvailableDoctor(specialization, startTime);
+            if (doctor == null)
+            {
+                MessageBox.Show("No available doctor found for the selected specialization and time.");
+                return;
+            }
+            // create new appointment object
+            Appointment appointment = new Appointment(0, patient.Id, doctor.Id, startTime, endTime, AppointmentStatus.Scheduled);
+            appointmentController.AddAppointment(appointment);
+            MessageBox.Show("Appointment booked successfully!");
+            // refresh appointment list
+            LoadAppointmentsForPatient(patient.Id, dgvAddAppointment);
         }
     }
 }
