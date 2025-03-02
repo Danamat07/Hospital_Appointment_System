@@ -8,9 +8,11 @@ A simple yet efficient hospital appointment system that allows patients to book,
 ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" height="40" alt="visualstudio logo"  />
+- **.NET** - The framework used to build and run the application.
 - **C#** – The main programming language used for the backend and user interface (UI).
 - **Windows Forms (WinForms)** – For creating the graphical user interface.
 - **MySQL** – For database management and storing data related to patients, doctors, and appointments.
+- **Online Database** - This project uses an **online MySQL database** hosted on [sql7.freesqldatabase.com](https://www.freesqldatabase.com) for easy access by all users, ensuring the system is available from any location.
 - **Git** – For version control.
 
 ## 🎯 Features
@@ -30,7 +32,11 @@ A simple yet efficient hospital appointment system that allows patients to book,
   - **UI Layer** 🖥 - Windows Forms
 
 ## 🛠️ Installation
-1. Clone the repository:  git clone https://github.com/yourusername/Hospital-Appointment-System.git
+1. Clone the repository:
+```yaml
+git clone https://github.com/yourusername/Hospital-Appointment-System.git
+```
+
 2. Install dependencies:  Make sure you have Visual Studio with the .NET Desktop Development workload installed.
 3. Run the project:  Open the project in Visual Studio and press F5 to start the application.
 
