@@ -31,7 +31,7 @@ namespace Hospital_Appointment_System.UI
             string password = txtNewPassword.Text.Trim();
 
             // validate input
-            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password){
+            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password)){
                 MessageBox.Show("Please fill in the required fields.");
                 return;
             }

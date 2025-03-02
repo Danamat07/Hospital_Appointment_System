@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Hospital_Appointment_System
+namespace Hospital_Appointment_System.UI
 {
     internal static class Program
     {
@@ -16,7 +16,7 @@ namespace Hospital_Appointment_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new LoginForm());
         }
     }
 }

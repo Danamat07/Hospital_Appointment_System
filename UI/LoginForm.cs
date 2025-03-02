@@ -17,6 +17,12 @@ namespace Hospital_Appointment_System.UI
         private PatientController patientController;
         private const string AdminPassword = "admin123";
 
+        public LoginForm()
+        {
+            InitializeComponent();
+            patientController = new PatientController();
+        }
+
         // patient login button click
         private void btnPatientLogin_Click(object sender, EventArgs e)
         {
