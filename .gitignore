@@ -399,7 +399,21 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
-# For database credentials
+# Ignore database backups or dump files
+*.sql~
+*.dump
+*.bak
+*.backup
+*.db
+
+# Ignore database configuration files with credentials
 .env
 config.json
 appsettings.json
+appsettings.Development.json
+database-config.yml
+
+# Ignore IDE and OS-specific files
+.vscode/
+*.DS_Store
+
