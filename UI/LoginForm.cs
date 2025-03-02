@@ -35,12 +35,12 @@ namespace Hospital_Appointment_System.UI
                 Patient patient = patientController.Authenticate(email, password);
                 if (patient != null)
                 {
-                    // successful login
-                    MessageBox.Show("Login successful!");
                     // switch to patient dashboard
                     PatientDashboard dashboard = new PatientDashboard(patient);
                     this.Hide();
                     dashboard.Show();
+                    // successful login
+                    MessageBox.Show("Login successful!");
                 }
                 else
                 {
@@ -60,12 +60,12 @@ namespace Hospital_Appointment_System.UI
             string adminPassword = txtAdminPassword.Text.Trim();
             if (adminPassword == AdminPassword)
             {
-                // successful admin login
-                MessageBox.Show("Login Successful!");
                 // switch to admin panel
                 AdminPanel panel = new AdminPanel();
                 this.Hide();
                 panel.Show();
+                // successful admin login
+                MessageBox.Show("Login Successful!");
             }
             else
             {
@@ -81,6 +81,7 @@ namespace Hospital_Appointment_System.UI
             CreateAccountForm form = new CreateAccountForm();
             this.Hide();
             form.Show();
+            MessageBox.Show("Account created successfuly!");
         }
     }
 }
