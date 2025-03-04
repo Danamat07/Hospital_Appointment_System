@@ -41,8 +41,8 @@ git clone https://github.com/yourusername/Hospital-Appointment-System.git
 3. Run the project:  Open the project in Visual Studio and press F5 to start the application.
 
 ## Preview
-![image](https://github.com/user-attachments/assets/b6f0cef2-9f49-45d6-a6dd-488ac39d0da8)
-![image](https://github.com/user-attachments/assets/c46cbba5-e9a5-4af0-8b44-07b4779a8188)
+![Capture3](https://github.com/user-attachments/assets/65822090-1318-4abc-b184-b887b2195065)
+![Capture](https://github.com/user-attachments/assets/10d9409a-00bb-4047-b39a-7443755640e1)
 ![image](https://github.com/user-attachments/assets/979f512f-47ea-4ba1-bf43-619a1c702900)
 
 > ---------------------------------------------------------------------------------------------
