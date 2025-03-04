@@ -40,9 +40,11 @@ git clone https://github.com/yourusername/Hospital-Appointment-System.git
 2. Install dependencies:  Make sure you have Visual Studio with the .NET Desktop Development workload installed.
 3. Run the project:  Open the project in Visual Studio and press F5 to start the application.
 
-## UML Schema
-![HospUML drawio](https://github.com/user-attachments/assets/d4c25a14-4d61-41e6-afb1-f1cbbc505530)
-
 ## Preview
 ![image](https://github.com/user-attachments/assets/b6f0cef2-9f49-45d6-a6dd-488ac39d0da8)
+![image](https://github.com/user-attachments/assets/c46cbba5-e9a5-4af0-8b44-07b4779a8188)
+![image](https://github.com/user-attachments/assets/979f512f-47ea-4ba1-bf43-619a1c702900)
 
+> ---------------------------------------------------------------------------------------------
+## UML Schema
+![HospUML drawio](https://github.com/user-attachments/assets/d4c25a14-4d61-41e6-afb1-f1cbbc505530)
