@@ -43,8 +43,9 @@ git clone https://github.com/yourusername/Hospital-Appointment-System.git
 ## Preview
 ![Capture3](https://github.com/user-attachments/assets/65822090-1318-4abc-b184-b887b2195065)
 ![Capture](https://github.com/user-attachments/assets/10d9409a-00bb-4047-b39a-7443755640e1)
+> -----------------------------------------------------------------------------------------
 ![image](https://github.com/user-attachments/assets/979f512f-47ea-4ba1-bf43-619a1c702900)
 
-> ---------------------------------------------------------------------------------------------
+> -----------------------------------------------------------------------------------------
 ## UML Schema
 ![HospUML drawio](https://github.com/user-attachments/assets/d4c25a14-4d61-41e6-afb1-f1cbbc505530)
