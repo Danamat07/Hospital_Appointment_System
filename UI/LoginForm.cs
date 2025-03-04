@@ -81,7 +81,6 @@ namespace Hospital_Appointment_System.UI
             CreateAccountForm form = new CreateAccountForm();
             this.Hide();
             form.Show();
-            MessageBox.Show("Account created successfuly!");
         }
     }
 }

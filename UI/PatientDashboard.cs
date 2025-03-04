@@ -82,7 +82,7 @@ namespace Hospital_Appointment_System.UI
             loginForm.Show();
         }
 
-        private void patientTabs_Click(object sender, EventArgs e)
+        private void btnBackTab4_Click(object sender, EventArgs e)
         {
             this.Hide();
             LoginForm loginForm = new LoginForm();

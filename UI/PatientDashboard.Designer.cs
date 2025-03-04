@@ -56,11 +56,11 @@
             this.dgvUpdateAppointment = new System.Windows.Forms.DataGridView();
             this.tabDeleteAppointment = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnDeleteAppointment = new System.Windows.Forms.Button();
             this.txtIDofAppToDelete = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnBackTab4 = new System.Windows.Forms.Button();
             this.dgvCancelAppointment = new System.Windows.Forms.DataGridView();
-            this.btnDeleteAppointment = new System.Windows.Forms.Button();
             this.patientTabs.SuspendLayout();
             this.tabViewAppontments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUpcomingAppointments)).BeginInit();
@@ -88,7 +88,6 @@
             this.patientTabs.Size = new System.Drawing.Size(776, 426);
             this.patientTabs.TabIndex = 0;
             this.patientTabs.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
-            this.patientTabs.Click += new System.EventHandler(this.patientTabs_Click);
             // 
             // tabViewAppontments
             // 
@@ -380,6 +379,17 @@
             this.panel3.Size = new System.Drawing.Size(380, 345);
             this.panel3.TabIndex = 6;
             // 
+            // btnDeleteAppointment
+            // 
+            this.btnDeleteAppointment.BackColor = System.Drawing.Color.Bisque;
+            this.btnDeleteAppointment.Location = new System.Drawing.Point(125, 215);
+            this.btnDeleteAppointment.Name = "btnDeleteAppointment";
+            this.btnDeleteAppointment.Size = new System.Drawing.Size(110, 43);
+            this.btnDeleteAppointment.TabIndex = 8;
+            this.btnDeleteAppointment.Text = "Cancel Appointment";
+            this.btnDeleteAppointment.UseVisualStyleBackColor = false;
+            this.btnDeleteAppointment.Click += new System.EventHandler(this.btnDeleteAppointment_Click);
+            // 
             // txtIDofAppToDelete
             // 
             this.txtIDofAppToDelete.Location = new System.Drawing.Point(135, 143);
@@ -406,6 +416,7 @@
             this.btnBackTab4.TabIndex = 4;
             this.btnBackTab4.Text = "Back";
             this.btnBackTab4.UseVisualStyleBackColor = false;
+            this.btnBackTab4.Click += new System.EventHandler(this.btnBackTab4_Click);
             // 
             // dgvCancelAppointment
             // 
@@ -415,17 +426,6 @@
             this.dgvCancelAppointment.Name = "dgvCancelAppointment";
             this.dgvCancelAppointment.Size = new System.Drawing.Size(360, 345);
             this.dgvCancelAppointment.TabIndex = 1;
-            // 
-            // btnDeleteAppointment
-            // 
-            this.btnDeleteAppointment.BackColor = System.Drawing.Color.Bisque;
-            this.btnDeleteAppointment.Location = new System.Drawing.Point(125, 215);
-            this.btnDeleteAppointment.Name = "btnDeleteAppointment";
-            this.btnDeleteAppointment.Size = new System.Drawing.Size(110, 43);
-            this.btnDeleteAppointment.TabIndex = 8;
-            this.btnDeleteAppointment.Text = "Cancel Appointment";
-            this.btnDeleteAppointment.UseVisualStyleBackColor = false;
-            this.btnDeleteAppointment.Click += new System.EventHandler(this.btnDeleteAppointment_Click);
             // 
             // PatientDashboard
             // 
