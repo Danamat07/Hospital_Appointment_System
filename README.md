@@ -44,4 +44,5 @@ git clone https://github.com/yourusername/Hospital-Appointment-System.git
 ![HospUML drawio](https://github.com/user-attachments/assets/d4c25a14-4d61-41e6-afb1-f1cbbc505530)
 
 ## Preview
->TO-DO
+![image](https://github.com/user-attachments/assets/b6f0cef2-9f49-45d6-a6dd-488ac39d0da8)
+
